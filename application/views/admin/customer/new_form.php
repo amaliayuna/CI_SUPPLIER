@@ -24,31 +24,35 @@
 				</div>
 				<?php endif; ?>
 
-        <!-- Card  -->
 				<div class="card mb-3">
 					<div class="card-header">
-
-						<a href="<?php echo site_url('admin/customer/') ?>"><i class="fas fa-arrow-left"></i>Back</a>
+						<a href="<?php echo site_url('admin/customers/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
 					</div>
 					<div class="card-body">
 
-						<form action="<?php base_url(" admin/customer/add") ?>" method="post"
-							enctype="multipart/form-data" >
+						<form action="<?php base_url('admin/customer/add') ?>" method="post" enctype="multipart/form-data" >
+                            <div class="form-group">
+								<label for="customer_id">Id_customer</label>
+								<input class="form-control <?php echo form_error('customer_id') ? 'is-invalid':'' ?>"
+								 type="text" name="id" placeholder="customer_id" />
+								<div class="invalid-feedback">
+									<?php echo form_error('customer_id') ?>
+								</div>
+                            </div>
 
-							<div class="form-group">
-								<label for="name">name</label>
+                            <div class="form-group">
+								<label for="name">Name*</label>
 								<input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>"
-								 type="text" name="name" placeholder="" />
+								 type="text" name="name" placeholder="Customer name" />
 								<div class="invalid-feedback">
 									<?php echo form_error('name') ?>
 								</div>
 							</div>
 
-
 							<div class="form-group">
-								<label for="addres">address</label>
-								<input class="form-control-file <?php echo form_error('addres') ? 'is-invalid':'' ?>"
-								 type="text" name="addres" placeholder="" />
+								<label for="addres">Address</label>
+								<input class="form-control <?php echo form_error('addres') ? 'is-invalid':'' ?>"
+								 type="text" name="addres" min="0" placeholder="Customer address" />
 								<div class="invalid-feedback">
 									<?php echo form_error('addres') ?>
 								</div>

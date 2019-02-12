@@ -22,7 +22,6 @@ class customer_model extends CI_Model
       ];
   }
 
-
   public function getAll()
   {
       return $this->db->get($this->_table)->result();
@@ -55,7 +54,3 @@ class customer_model extends CI_Model
       return $this->db->delete($this->_table, array("customer_id" => $id));
   }
 }
-
-
-
- ?>

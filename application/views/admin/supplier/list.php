@@ -21,7 +21,7 @@
 				<!-- DataTables -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/customer/add') ?>"><i class="fas fa-plus"></i> Add New</a>
+						<a href="<?php echo site_url('admin/supplier/add') ?>"><i class="fas fa-plus"></i> Add New</a>
 					</div>
 					<div class="card-body">
 
@@ -29,28 +29,28 @@
 							<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
-										<th>Customer_id</th>
-										<th>Name</th>
-										<th>Address</th>
+										<th>Supplier_id</th>
+										<th>Supplier_name</th>
+										<th>supplier_address</th>
 										<th>Actions</th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach ($customer as $customers): ?>
+									<?php foreach ($supplier as $suppliers): ?>
 									<tr>
 										<td width="150">
-											<?php echo $customers->customer_id ?>
+											<?php echo $suppliers->supplier_id ?>
 										</td>
 										<td>
-											<?php echo $customers->name ?>
+											<?php echo $suppliers->suplier_name ?>
 										</td>
 											<td>
-											<?php echo $customers->addres ?>
+											<?php echo $suppliers->supplier_address ?>
 											</td>
 										<td width="250">
-											<a href="<?php echo site_url('admin/customer/edit/'.$customers->customer_id) ?>"
+											<a href="<?php echo site_url('admin/supplier/edit/'.$suppliers->supplier_id) ?>"
 											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/customer/delete/'.$customers->customer_id) ?>')"
+											<a onclick="deleteConfirm('<?php echo site_url('admin/supplier/delete/'.$suppliers->supplier_id) ?>')"
 											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 										</td>
 									</tr>
